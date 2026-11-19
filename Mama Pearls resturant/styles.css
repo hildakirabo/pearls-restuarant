@@ -1,0 +1,44 @@
+header{
+    color:black; 
+    font-family: 'Times New Roman', Times, serif;
+    background-color: blanchedalmond;
+}
+body{color:hsl(183, 37%, 23%);
+    background-color: hsl(0, 73%, 70%);
+    line-height: 1.6;
+}
+h2{
+    color: rgb(0, 2, 5);
+}
+h3{
+    color:black
+}
+.joy{
+    color: rgb(187, 187, 144);
+    font-family: 'Courier New', Courier, monospace;
+}
+#AboutUs{
+    font-family: italic;
+    color:brown
+}
+*{
+    color:chartreuse
+}
+nav a{
+    color:rgb(38, 12, 2)
+}
+.page{
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px
+}
+*{
+    box-sizing:border-box
+}
+.card{
+    width:300px;
+    padding: 20px, 70px;
+    border:5px solid #ccc;
+    margin: 10px auto
+}

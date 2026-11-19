@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mama Pearl's Kitchen</title>
+   <style>
+    *{
+        box-sizing:border-box
+    }
+    body{
+        background-color: rgb(219, 231, 227);
+        margin:0;
+        font-family:sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    header{
+        background-color: rgb(175, 211, 199);
+        text-align: center;
+        font-family: cursive;
+        font-size: small;  
+        position: sticky; 
+        top: 0;
+    }
+    header h1{
+        font-size:medium;
+        margin: 8px 0 4px;
+    }
+    header p{
+        font-size: small;
+        margin: 0;
+    }
+    
+     nav ul{
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+     }
+     nav{
+        position:sticky
+     }
+    nav li{
+        display: inline-flex;
+        border-radius: 10px;
+        border: 2px solid black;
+        margin: 4px;
+        text-decoration: none;
+        overflow: hidden;
+    
+    }
+    nav a{
+    display: inline-flex;
+    text-decoration: none;
+    color: black;
+    background-color: brown;
+    padding: 6px;
+    }
+    nav a:hover{
+        color:white;}
+    footer{
+        text-align: center;
+    }    
+
+    .photo{
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 12px;
+    } 
+    .photo img{
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
+    
+    h2
+       { color: rgb(46, 125, 91); 
+        border-bottom: 3px solid rgb(46, 125, 91);
+        padding-bottom: 4px; }
+    h3{ 
+        color: #1f3d36;
+    }
+
+    p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    main section {
+        background: rgb(255, 255, 255);
+        border-radius: 12px;
+        padding: 10px;
+        margin: 20px auto;
+        max-width: 1200px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+    
+    .starter-photos{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        background-color: rgb(218, 228, 228);
+    }
+    .starter-photos figure{
+        position: static;
+        float: none;
+        height: auto;
+        width: 200px;
+        margin: 0;
+        text-align: center;
+    }
+    .starter-photos img {
+     display: block;
+     width: 200px;
+     height: 200px;
+     border-radius: 50%;
+     object-fit: cover;
+     margin: 0 auto 8px;
+    }
+    .starter-photos img:hover{
+        transform: scale(1.1);
+        border: 1px solid black;
+    }
+    .Maindish-photos{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        background-color: rgb(218, 228, 228);
+    }
+    .Maindish-photos img{
+        display: block;
+         width: 200px;
+         height: 200px;
+         object-fit: cover;
+         margin: 0 auto 8px;
+    }
+    .Maindish-photos figure{
+        position: static;
+        float: none;
+        height: auto;
+        width: 200px;
+        margin: 0;
+        text-align: center;
+    }
+    .Maindish-photos img:hover{
+        transform: scale(1.1);
+        border: 1px solid black;
+    }
+    .desserts-photos{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        background-color: rgb(218, 228, 228);
+    }
+    .desserts-photos img{
+         display: block;
+         width: 200px;
+         height: 200px;
+         border-radius: 50%;
+         object-fit: cover;
+         margin: 0 auto 8px; 
+    }
+    .desserts-photos figure{
+        position: static;
+        float: none;
+        height: auto;
+        width: 200px;
+        margin: 0;
+        text-align: center;
+    }
+    .orders{
+        background-color: rgb(218, 228, 228);
+        border: 2px solid black;
+        border-radius: 12px;
+        padding: 20px;
+        max-width: 100%;
+    }
+    .glossary{
+        max-width: 1200px;
+    }
+    
+    .item {
+      background: #ffffff;
+      border-left: 5px solid #2e7d5b;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 16px solid #2e7d5b;
+    }
+
+    .item:hover {
+      transform: translateY(-3px);
+      
+    }
+
+    dt {
+        font-weight: 700;
+        color: #2e7d5b;
+        margin-bottom: 6px;
+     }
+
+    dd {
+     margin: 0;
+     color: #444;
+     }
+    .price-list {
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: "Segoe UI", Arial, sans-serif;
+}
+
+    table {
+       width: 100%;
+       border-collapse: separate;
+       border-spacing: 0;
+       background: rgb(255, 255, 255);
+       border-radius: 10px;
+       overflow: hidden;
+}
+
+    caption {
+       text-align: left;
+       font-weight: 600;
+       color: rgb(31, 61, 54);
+       padding-bottom: 10px;
+    }
+
+     th, td {
+        padding: 12px 16px;
+        text-align: left;
+     }
+
+    th { 
+        background: rgb(46, 125, 91);
+        color: rgb(255, 255, 255);
+    }
+
+    td {
+        border-bottom: 1px solid rgb(235, 255, 246);
+     }
+
+     tbody tr:nth-child(even) {
+       background: rgb(243, 248, 246);
+     }
+
+    tbody tr:hover {
+        background: rgb(227, 241, 234);
+     }
+
+    th:last-child,
+    td:last-child {
+        text-align: right;
+    }
+
+     .note {
+       font-size: smaller;
+       color: #555;
+       margin-top: 12px;
+    }
+    html
+     { scroll-behavior: smooth; 
+    }
+
+    h2[id], h3[id]
+     { scroll-margin-top: 90px; 
+    }
+
+    main .glossary, main .price-list
+     {
+        margin: 20px auto; }
+
+    blockquote {
+        border-left: 5px solid #2e7d5b;
+        background: #f3f8f6;
+        margin: 16px 0;
+        padding: 8px 16px;
+        border-radius: 0 8px 8px 0;
+    }
+    label { font-weight: bold; }
+
+    input[type="text"], input[type="email"], input[type="tel"],
+    input[type="date"], input[type="time"], select {
+        padding: 8px;
+        margin: 4px 0 12px;
+        border: 2px solid rgb(2, 3, 3);
+        border-radius: 6px;
+    }
+    
+    button {
+        background: rgb(3, 14, 9);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 20px;
+        padding: 10px 24px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button:hover {
+         background: rgb(31, 90, 66); 
+        }
+    fieldset {
+        max-width: 1200px;
+        margin: 20px auto;
+        border: 2px solid #5b3a15;
+        border-radius: 12px;
+        background: #ffffff;
+    }
+    legend  { 
+         font-weight: bold; 
+         color: rgb(100, 70, 33);
+         padding: 0 8px; }
+
+    fieldset section {
+         box-shadow: none;
+         margin: 0; 
+         padding: 10px 0; 
+        }
+
+    section > footer { 
+         background: rgb(46, 125, 91);
+         color: rgb(255, 255, 255); 
+         padding: 12px; }
+
+    .to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        border-radius: 50%;
+        background: rgb(46, 125, 91);
+        color: rgb(8, 8, 8);
+        text-decoration: none;
+        font-size: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    .to-top:hover { 
+        background: rgb(31, 90, 66);
+     }
+  </style>
+</head>
+<body >
+<header>
+    <h1>Mama Pearl's Kitchen</h1>
+    <p><em>Fresh Local food cooked with love since 2010</em></p>
+    <nav>
+        <ul>
+            <li><a href="#AboutUs"> About Us</a></li>
+            <li><a href="#Menu">Our Menu</a></li> 
+            <li><a href="#Specials">Specials</a></li> 
+            <li><a href="#Openinghours">Opening Hours</a></li>         
+            <li><a href="#Reviews"> Reviews</a></li>
+             <li><a href="#ReserveTable">Reserve a Table</a></li>
+        </ul>
+    </nav>    
+</header>
+<hr>  
+<main>
+    <section>
+        <h2 id="AboutUs">About Us</h2>
+        <div class="photo">
+        <img src="images/our restuarant.jpeg" alt="Our restaurant" width="500" height="400">
+        </div>
+        <p>Welcome to <strong>Mama Pearl's Kitchen</strong>, where every meal<br> feels like <i>home</i>.
+             We use only <mark>fresh,locally grown</mark><br>ingredients.</p>
+            <p>Our story began in a tiny kitchen with one pot and a big dream.<br>
+            Today,we serve over 200 guests every week</p> 
+        <h3>Our Promise</h3> 
+        <p>Good food, fair prices and a warm welcome.</p> 
+        <h4>Our Chefs</h4>
+        <blockquote> 
+            <p><q>Cooking is love made visible</q></p>
+            <footer>-<cite>Chef Godwin</cite></footer>
+        </blockquote>
+    </section>
+    <hr>
+ <section>
+        <h2 id="Menu">Our Menu</h2>
+        <h2>Starters</h2>
+        <div class="starter-photos">
+        <figure>
+        <img src="images/samosa.jpeg" alt="Samosa and chilly dip" width="250">
+        <figcaption>Crispy beef samosa served with chilli dip</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/chicken nugget.jfif" alt="Chicken nuggets served with dipping sauce">
+            <figcaption>Chicken nuggets served with dipping sauce</figcaption>
+        </figure> 
+        
+        <figure>
+            <img src="images/fish finger.jfif" alt="Fish fingers">
+            <figcaption>Fish fingers</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/sausage roll.jfif" alt="Sausage roll">
+            <figcaption>Sausage roll</figcaption>
+        </figure>
+
+        </div>  
+        <article>   
+            <h2>Main Dishes</h2>
+            <div class="Maindish-photos">
+            <figure>
+               <img src="images/chicken luwombo.jpeg " alt="Chicken Luwombo" width="250">
+               <figcaption>Chicken Luwombo</figcaption>
+            </figure>
+
+            <figure>
+               <img src="images/fish.jpeg" alt="Steamed fish" width="250">
+               <figcaption>Steamed whole fish</figcaption>
+            </figure>
+
+             <figure>
+               <img src="images/katoogo matooke.jfif" alt="Katoogo" >
+               <figcaption>Katoogo matooke served with avocado</figcaption>
+            </figure>
+            
+             <figure>
+               <img src="images/matooke.jfif" alt="Matooke served with gnuts sauce" >
+               <figcaption>Matooke served with G.nut sauce</figcaption>
+            </figure>
+           </div>
+        </article>      
+
+        <article>
+            <h3>Desserts</h3>
+            <div class="desserts-photos">
+            <figure> 
+                <img src="images/dessert .jpeg" alt="Dessert">
+                <figcaption>Fresh tropical fruit salad.</figcaption>
+            </figure>
+
+            <figure> 
+                <img src="images/vanilla icecreaam.jfif" alt="Dessert" >
+                <figcaption>Vanilla icecream.</figcaption>
+            </figure>
+
+             <figure> 
+                <img src="images/banana fritters.jfif" alt="Dessert">
+                <figcaption>Banana fritters.</figcaption>
+            </figure>
+            </div>
+
+        </article>
+
+        <article>
+            <h3>How to order</h3>
+            <div class="orders">
+            <ol>
+                <li>Choose a table</li>
+                <li>Pick your meal from the menu.</li>
+                <li>Tell your waiter your order.</li>
+                <li>Enjoy your food!</li>
+            </ol>
+            </div>
+        </article>
+    </section>
+
+        <section class="glossary">
+            <h3>Menu Glossary</h3>
+            <dl>
+                <div class="item">
+                <dt>Luwombo</dt>
+                <dd>A traditional dish steamed inside banana leaves.</dd>
+                </div>
+
+                <div class="item">
+                <dt>Matooke</dt>
+                <dd>Steamed,mashed green bananas.</dd>
+                </div>
+
+                <div class="item">
+                <dt>Rolex</dt>
+                <dd>A chapati rolled around a fried egg and vegetables</dd>
+                </div>
+            </dl>
+        </section>    
+    
+        
+
+        <section class="price-list">
+            <h3 >Price List.</h3>
+            <table>
+                <caption>Our most popular Foods</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Dish</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price(UGX)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Beef Samosa</td>
+                    <td>Starter</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>Chicken Luwombo</td>
+                    <td>Main</td>
+                    <td>25,000</td>
+                </tr>
+                <tr>
+                    <td>Grilled Tilapia</td>
+                    <td>Main</td>
+                    <td>30,000</td>
+                </tr>
+                <tr>
+                    <td>Fruit Salad</td>
+                    <td>Dessert</td>
+                    <td>8,000</td>
+                </tr>
+                </tbody>
+            </table>    
+             <p class="note">Prices include 18% VAT *Old price of Luwombo <del>UGX 28,000</del></p>  
+        </section>
+ <section>
+    <h3 id="Specials">Weekly Specials</h3>
+    <h4 >Special Offer</h4>
+    <p>Every Friday enjoy<strong> 2 Rolex for the price of 1.</strong></p>
+    <p>Orders by phone or visit our <a href="specials.html"> specials page.</a></p>
+    <p>All our meals are <abbr title="First In First Out">FIO </abbr> certified.</p>   
+ </section>
+ <hr>
+ <section>
+    <h3 id="Openinghours">Opening Hours & Location</h3>
+    <ul>
+        <li>Monday-Friday: 8:00 AM- 10:00 PM</li>
+        <li>Saturday-Sunday: 10 AM- 11:00 PM</li>
+    </ul>
+ </section>
+ <section>
+    <address>
+        Mama Pearl's Kitchen<br>
+        Plot 12, Kampala Road<br>
+        Kampala, Uganda<br>
+        Phone:<a href="tel:+256700000000">+256 700 000 000</a><br>
+        Email:<a href="mailto:hello@mamapearls.example">hello@mamapearls.example</a>
+    </address>
+ </section>
+ <section>
+    <h3 id="Reviews">Reviews</h3>
+    <blockquote>
+        <p><q>The tastiest fish fingers in the world! </q></p>
+        <footer>-<cite>KIRABO</cite></footer>
+    </blockquote>
+    <blockquote>
+        <p><q>The Luwombo reminds me of my mom's cooking.</q></p>
+        <footer>-<cite>Nalumansi</cite></footer>
+    </blockquote>
+ </section>
+<fieldset>
+ <legend>Table Reservation</legend>
+ <section>
+    
+    <h3 id="ReserveTable">Reserve a Table</h3>
+    <form>
+    
+        <label for="fullname"> Full name </label>
+        <input type="text" id="fullname" required>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <br>
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" required>
+        
+    </form>
+ </section>
+ <hr>
+ <section>
+    <h3>Booking Details</h3>
+    <form>
+        <label for="date"> Date:</label>
+        <input type="date" id="date" required><br>
+
+        <label for="time">Time: </label>
+        <input type="time" id="time" required><br>
+        <hr>
+        <label for="seating">Seating</label> 
+        <select id="seating">
+        <option >Outdoor</option>
+        <option >Indoor</option>
+        <option >High table</option>
+    </select> 
+     <p class="occasion">Occasion:</p>
+    <input type="radio" id="Casual" name="occasion">
+    <label for="Casual">Casual</label>
+    <input type="radio" id="Birthday" name="occasion">
+    <label for="Birthday">Birthday</label>
+    <input type="radio" id="Business" name="occasion">
+    <label for="Business">Business</label>
+    <p class="extras">Extras:</p>
+    
+    <label for="extraBirthday">Birthday</label>
+    <input type="checkbox" id="extraBirthday">
+    <label for="highchair">High Chair</label>
+    <input type="checkbox" id="highchair">
+    <label for="vegetarian">Vegetarian Menu</label>
+    <input type="checkbox" id="vegetarian">
+    <br><br>
+    <button type="submit">Reserve Table</button>
+    </form>
+ </section>
+</fieldset>
+</main>
+<section>
+<footer> 
+    <p>
+        &copy; 2026 Mama Pearl's Kitchen.All rights reserved.
+    </p>
+</footer>
+</section>
+<a href="#" class="to-top" title="Back to top">&uarr;</a>
+</body>
+</html>
